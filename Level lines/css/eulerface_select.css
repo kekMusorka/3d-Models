@@ -1,0 +1,67 @@
+#show_cond {
+	opacity: 0;
+    height: 50px;
+    width: 250px;
+    position: absolute;
+    right: 0%;
+}
+.dropDown {
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	left: -1px;
+	visibility: hidden;
+	background: white;
+	margin-top: -.6em;
+	overflow-y: scroll;
+	z-index: 999;
+}
+
+.selectContainer {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+}
+
+.selectActive {
+	display: table-cell;
+	width: 90%;
+}
+
+.dropper {
+	display: block;
+	height: 20px;
+	background-color: #dfdde0;
+	border: 3px solid #bdb9ba;
+	cursor: pointer;
+	padding: 15px 35px;
+    margin-top: 15px;
+}
+
+.dropper:after {
+	content: "List";
+	color: #000;
+}
+
+.option {
+	padding-bottom: 0.7em;
+}
+.option:last-child {	
+	border-bottom-left-radius: 8px;
+}
+
+.option:only-child {	
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+.option:hover {
+	background: rgba(144, 144, 128, .4);
+}
+
+
+html {
+	height: 100%;
+}
