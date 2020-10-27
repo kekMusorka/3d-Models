@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<meta charset = 'utf-8'/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>VisualMath: Производная по направлению</title>
+	
+	<link rel='stylesheet' href='../../css/eulerface_layout.css' media='screen' />
+	<link rel='stylesheet' href='../../css/eulerface_inline.css' media='screen' />
+	<link rel='stylesheet' href='../../css/eulerface_select.css' media='screen' />
+	<link rel='stylesheet' href='../lagrange_style.css' media='screen' />
+</head>
+
+<body lang = 'ru'>
+	<header id = 'mainBar'>
+		<nav id = 'siteNav'>
+			<h1 id = 'logo'></h1>
+		</nav>
+		<nav id = 'lessonNav'>
+		 <section class = 'articlePage'>			
+			<div class = 'dynamicBlock'>
+				<div class = 'control' id = 'controlBlock1'>
+					<p>
+						<select id='sel1'></select>
+					</p>
+					<div id='opt-la-1'>
+					    <img src="img/func2.png" alt="">
+					<div id='opt-la-2'>
+                        <img src="img/func3.png" alt="">
+					</div> 
+					<div id='opt-la-3'>
+                        <img src="img/func4.png" alt="">
+					</div>
+					<div id='opt-la-4'>
+                        <img src="img/func5.png" alt="">
+					</div>
+					<div id='opt-la-5'>
+                        <img src="img/func1.png" alt="">
+				    </div>
+				</div>
+				</div>
+   		</section>
+				<div class="but"><p>?</p></div>
+				<div id="options"></div>
+		</nav>
+	</header>		
+
+
+	
+	     <article class = 'articleContent'>
+						<strong>Выберите точку, для которой хотите найти производную:</strong>  &nbsp &nbsp   
+						
+							(x<sub>0</sub>:
+							<input id = "x_input" type = "number" min = "-5" max = "5" step = "0.1" value = "1" style = "width:56px">
+							y<sub>0</sub>:
+							<input id = "y_input" type = "number" min = "-5" max = "5" step = "0.1" value = "1" style = "width:56px">
+							)
+
+        <div id = "result"> 
+		<strong>Ответ:</strong>
+
+			 &nbsp   значение производной по x:
+				        <input id = "res" type = "text" min = "-1000" max = "1000" step = "0.1"  value = "" style = "width:60px">	,
+
+             &nbsp   значение производной по y:
+				        <input id = "res2" type = "text" min = "-1000" max = "1000" step = "0.1"  value = "" style = "width:60px">	
+						</p>
+				</div>			
+		<header id = 'articleHeader'>
+		</header>				
+		<figure class = 'visual'>
+			<figure class = 'visualFlex'>
+				<div class = 'aspect'>
+					<div class = 'aspectHolder'></div>
+					<figure id = 'plot3d_main' class = 'subVisual'></figure>
+					<div id = 'control_Y'></div>
+					<figcaption class = 'visualDesc'>
+						
+					</figcaption>
+				</div>
+					</div>
+				
+			</figure>
+		</figure>   
+		</article>
+		<title>fraction</title>
+			<style type='text/css'>
+				#fraction {
+ 					width: 80px;
+					text-align: center;
+				}
+				#fraction #numerator {
+ 					vertical-align: bottom;
+ 					border-bottom: 1px solid Black;
+				}
+				#fraction #denominator {
+					vertical-align: top;
+				}
+			</style>     
+		
+				<div class = 'controlled' id = 'solution1' style="display: none;">
+					<div id = 'solution-la-1'>
+						<br/>
+						 <strong> Решение </strong> 
+							<br/>
+							<br/>
+							<img src="img/Pr3.png" alt="">
+						
+					</div>
+					<div id = 'solution-la-2'>
+					<br/>
+							<strong> Решение </strong> </b>
+                            <img src="img/Pr2.png" alt="">
+					
+					</div>
+					<div id = 'solution-la-3'>
+						<br/>
+							<strong> Решение </strong> 
+							<img src="img/Pr4.png" alt="">
+					
+					</div>
+					<div id = 'solution-la-4'>
+                        <br/>
+							<strong> Решение </strong>
+                            <img src="img/Pr5.png" alt="">
+					</div>
+					<div id = 'solution-la-5'>
+                        <br/>
+							<strong> Решение </strong>
+                            <img src="img/Pr1.png" alt="">
+					</div>
+				</div>
+			</div>
+	
+    <script src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+	<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			skipStartupTypeset: true,
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			'HTML-CSS': { linebreaks: { automatic: true} }
+		});
+    </script>
+    
+	<script src = '../../js/eulerface.js'></script>
+	<script src = '../../js/select.js'></script>
+    
+	<script src="../deriv_prob.js"></script>
+	<script src="../../js/grafar.js"></script>
+	<script src="derivative.js"></script>
+	<script>
+		var timeVar = ''
+		body = document.querySelector('body')
+		button = document.querySelector('.but')
+		my_blok = document.querySelector('#solution1')
+
+		button.onclick = () => {my_blok.style.display == "block" ? my_blok.style = "display: none" : my_blok.style = "display: block"; timeVar = 1}
+		body.onclick = function () {
+			if (!timeVar) {my_blok.style = "display: none"}
+			if (timeVar) {setTimeout(function () { timeVar = ''; }, 100)}
+		}
+	</script>
+
+</body>
+
+</html>
