@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<meta charset = 'utf-8'/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>VisualMath: Производная по направлению</title>
+	
+	<link rel='stylesheet' href='../../css/eulerface_layout.css' media='screen' />
+	<link rel='stylesheet' href='../../css/eulerface_inline.css' media='screen' />
+	<link rel='stylesheet' href='../../css/eulerface_select.css' media='screen' />
+	<link rel='stylesheet' href='../lagrange_style.css' media='screen' />
+</head>
+
+<body lang = 'ru'>
+	<header id = 'mainBar'>
+		<nav id = 'siteNav'>
+			<h1 id = 'logo'></h1>
+		</nav>
+		
+		<nav id = 'lessonNav'>
+		<section class='articlePage'>
+			<div class='dynamicBlock'>
+				<div class='control' id='controlBlock1'>
+					<p>
+					<select id='sel1'></select>
+					</p>
+					<div id='opt-la-1'>
+						<img src="img/func1.png" alt="">
+					</div>
+					<div id='opt-la-2'>
+						<img src="img/func2.png" alt="">
+					</div>
+					<div id='opt-la-3'>
+						<img src="img/func3.png" alt="">
+					</div>
+					<div id='opt-la-4'>
+						<img src="img/func4.png" alt="">
+					</div>
+					<div id='opt-la-5'>
+						<img src="img/func5.png" alt="">
+					</div>
+					<div id='opt-la-6'>
+						<img src="img/func6.png" alt="">
+					</div>
+					<!--<div id='opt-la-7'>
+								<img src="img/func7.png" alt=""> 
+							</div> -->
+					<div id='opt-la-8'>
+						<img src="img/func8.png" alt="">
+					</div>
+				</div>
+				</p>
+				<strong>Локальный экстремум </strong> 
+			</div>
+			</div>
+		</section>
+		<div id="options"></div>
+		</nav>
+		</header>
+		
+		<article class = 'articleContent'>
+		<header id = 'articleHeader'>
+		</header>
+		<figure class='visual'>
+			<figure class='visualFlex'>
+				<div class='aspect'>
+					<div class='aspectHolder'></div>
+					<figure id='plot3d_main' class='subVisual'></figure>
+					<div id='control_Y'></div>
+					<figcaption class='visualDesc'>
+					</figcaption>
+				</div>
+			</figure>
+		</figure>	
+	</article>
+    <script src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+	<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			skipStartupTypeset: true,
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			'HTML-CSS': { linebreaks: { automatic: true} }
+		});
+    </script>
+    
+	<script src = '../../js/eulerface.js'></script>
+	<script src = '../../js/select.js'></script>
+    
+	<script src="../deriv_prob.js"></script>
+	<script src="../../js/grafar.js"></script>
+	<script src="derivative.js"></script>
+	<script>
+		var timeVar = ''
+		body = document.querySelector('body')
+		button = document.querySelector('.but')
+		my_blok = document.querySelector('#solution1')
+
+		button.onclick = () => {my_blok.style.display == "block" ? my_blok.style = "display: none" : my_blok.style = "display: block"; timeVar = 1}
+		body.onclick = function () {
+			if (!timeVar) {my_blok.style = "display: none"}
+			if (timeVar) {setTimeout(function () { timeVar = ''; }, 100)}
+		}
+	</script>
+	
+</body>
+
+</html>
