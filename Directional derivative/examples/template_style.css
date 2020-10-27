@@ -1,0 +1,18 @@
+.arrow {
+    margin-left: -13px;
+    
+}
+.arrow::before {
+    content: "→";
+    position:  relative;
+    top: -11px;
+    left: 13px;
+}
+#control_X , #control_Y {
+	position: absolute;
+	bottom: 500px;
+	height: 3em;
+	left: -15pt;
+	right: 36pt;
+	background: rgba(255,255,255,0);
+}
